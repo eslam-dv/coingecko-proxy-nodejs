@@ -16,6 +16,7 @@ const API_SINGLE_COIN_URL = "https://api.coingecko.com/api/v3/coins/";
 // Logging the requests
 app.use(morgan("dev"));
 
+// Get top 10 coins data
 app.use(
   "/coins",
   createProxyMiddleware({
@@ -27,6 +28,7 @@ app.use(
   })
 );
 
+// Get single coin data by using "/coin/:id"
 app.use(
   "/coin",
   createProxyMiddleware({
